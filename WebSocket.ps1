@@ -1,4 +1,9 @@
-﻿$SnapSwap = "rMwjYedjc7qqtKYVLiAccJSmCwih4LnE2q"                                                    
+﻿## By d4n13 < https://github.com/d4n13 >.  Don't forget to tip!
+##   Ripple credit TipJar: rEXJQNj9frFgG3Wk3smqGFVdMUX53c7Fw4 
+##
+## Git:  https://github.com/d4n13/ripple-ps-websocket.git
+## Ref1: https://ripple.com/wiki/RPC_API#path_find
+$SnapSwap = "rMwjYedjc7qqtKYVLiAccJSmCwih4LnE2q"                                                    
 $BitStamp = "rvYAfWj5gh67oV6fW32ZzP3Aw4Eubs59B"
 $create = @'
 {
