@@ -4,7 +4,7 @@
 ## Git:  https://github.com/d4n13/ripple-ps-websocket.git
 ## Ref1: https://ripple.com/wiki/RPC_API#path_find
 ## Note: See otherCmds directory for other commands.
-##
+## 
 $SnapSwap = "rMwjYedjc7qqtKYVLiAccJSmCwih4LnE2q"                                                    
 $BitStamp = "rvYAfWj5gh67oV6fW32ZzP3Aw4Eubs59B"
 $create = @'
