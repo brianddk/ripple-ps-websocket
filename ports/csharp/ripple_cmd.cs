@@ -3,11 +3,12 @@
 //
 // Git:  https://github.com/d4n13/ripple-ps-websocket.git
 // Note: See otherCmds directory for other commands.
-// Reqs: Requires .NET 4.0 (see Ref2)
+// Reqs: Requires .NET 4.5 (aka 4.0.30319.18010; see Ref2)
 // Erta: Warning MSB3644, benign, working to suppress
 // Ref1: https://ripple.com/wiki/RPC_API#path_find
-// Ref2: http://www.microsoft.com/en-us/download/details.aspx?id=17851
+// Ref2: http://www.microsoft.com/en-us/download/details.aspx?id=30653
 // Ref3: http://mutelight.org/using-the-little-known-built-in-net-json-parser
+// Ref4: http://stackoverflow.com/a/9546397
 //
 using System;
 using System.Text;
