@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<!--
+## By d4n13 < https://github.com/d4n13 >.  Don't forget to tip!
+##   Ripple credit TipJar: rEXJQNj9frFgG3Wk3smqGFVdMUX53c7Fw4 
+##
+## Git:  https://github.com/d4n13/ripple-ps-websocket.git
+## Ref1: https://ripple.com/wiki/RPC_API#account_info
+## Ref2: http://www.tutorialspoint.com/html5/html5_websocket.htm
+##
+-->
+<html>
+<head>
+<script type="text/javascript">
+function LogMessage(msg)
+{
+    var log = document.getElementById('ta_log'); 
+    log.value += msg + "\n";
+}
+function WebSocketTest()
+{
+  var query = 
+    {
+        "command": "account_info",
+        "account": "rEXJQNj9frFgG3Wk3smqGFVdMUX53c7Fw4"
+    };
+
+  //var query = 'test';
+  if ("WebSocket" in window)
+  {
+     var log = document.getElementById('ta_log'); 
+     log.value ="";
+     LogMessage("WebSocket is supported by your Browser!");
+     // Let us open a web socket
+     var ws = new WebSocket("wss://s1.ripple.com:443");
+     ws.onopen = function()
+     {
+        // Web Socket is connected, send data using send()
+        var query = document.getElementById('ta_query'); 
+        ws.send(query.value);
+        LogMessage("Message is sent...");
+     };
+     ws.onmessage = function (evt) 
+     { 
+        var msgObj = JSON.parse(evt.data);
+        var msgTxt = JSON.stringify(msgObj);
+        console.log(msgTxt);
+        var result = document.getElementById('ta_result'); 
+        result.value = msgTxt;
+        LogMessage("Message is received...\nSee Javascript console Log" );
+        ws.close();
+     };
+     ws.onclose = function()
+     { 
+        // websocket is closed.
+        LogMessage("Connection is closed..."); 
+     };
+  }
+  else
+  {
+     // The browser doesn't support WebSocket
+     LogMessage("WebSocket NOT supported by your Browser!");
+  }
+}
+</script>
+</head>
+<body>
+<div id="sse">
+   <a href="javascript:WebSocketTest()">Run WebSocket</a></br>
+   Query Text</br>
+   <TEXTAREA id="ta_query" ROWS=10 COLS=90 ></TEXTAREA></br>
+   Result Text</br>
+   <TEXTAREA id="ta_result" ROWS=10 COLS=90 ></TEXTAREA></br>
+   Log Text</br>
+   <TEXTAREA id="ta_log" ROWS=10 COLS=90 ></TEXTAREA></br>
+</div>
+</body>
+</html>
